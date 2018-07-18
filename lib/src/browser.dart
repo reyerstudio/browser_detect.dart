@@ -30,7 +30,7 @@ class Browser {
 }
 
 class _UnknownBrowser extends Browser {
-  _UnknownBrowser() : super("Unknown Browser", [() => true], [() => ""]);
+  _UnknownBrowser() : super("Unknown Browser", [() => true], [() => new RegExp(r"(.*)").firstMatch(window.navigator.appVersion)]);
 }
 
 typedef bool _VendorMatcher();
